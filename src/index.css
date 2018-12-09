@@ -1,14 +1,167 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: BPGarial;
+    src: url(./assets/fonts/bpg_arial_2009.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+    font-family: BPGweb;
+    src: url(./assets/fonts/bpg_web_001_caps.ttf);
 }
+
+html {
+    height: 100%;
+    background-image: linear-gradient(#01579b, #039be5);
+    background-repeat: no-repeat;
+    background-color: #039be5;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: BPGarial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: BPGweb;
+    font-weight: 400;
+    color: #fff;
+}
+
+p {
+    color: #fff;
+}
+
+a {
+    color: inherit;
+}
+
+hr {
+    border: 1px solid #ebebeb;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+/* Language Selection */
+
+.language-selection {
+    display: block;
+    overflow: hidden;
+}
+
+.language-selection ul {
+    float: right;
+}
+
+.language-selection li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+}
+
+/* ------------------------ */
+
+/* Progress Bar */
+
+.progress-bar {
+    position: relative;
+    min-height: 100%;
+    padding: 3rem 0;
+    margin-bottom: 50px;
+}
+
+.progress-bar-front {
+    overflow: hidden;
+    position: absolute;
+}
+
+/* ------------------------ */
+
+/* Petition Action */
+
+.petition-action {
+    margin-bottom: 100px;
+}
+
+.white-wrapper {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+input[type='text']:not(.browser-default),
+input[type='email']:not(.browser-default) {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    font-family: BPGarial;
+}
+
+input[type='text']:not(.browser-default):focus:not([readonly]),
+input[type='email']:not(.browser-default):focus:not([readonly]) {
+    border-bottom: none;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.action-btn {
+    display: block;
+    width: 100%;
+    background-color: #7cb342;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: BPGweb;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.action-btn.fb {
+    background-color: #3b5998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn.fb img {
+    height: 20px;
+    margin-right: 15px;
+}
+
+.action-btn:hover {
+    transition: box-shadow 250ms;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+::placeholder {
+    color: #6a6a6a;
+}
+
+.white-wrapper p {
+    color: black;
+    text-align: center;
+}
+
+/* ------------------------ */
+
+/* BulletPoint */
+
+.bulletpoint {
+    margin-bottom: 100px;
+}
+
+.bulletpoint-list img {
+    width: 100%;
+}
+
+/* ------------------------ */
