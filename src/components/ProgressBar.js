@@ -5,6 +5,7 @@ import progressFront from '../assets/img/progress-front.png';
 export default class ProgressBar extends Component {
     state = {
         windowWidth: 0,
+        progress: '0%',
     };
 
     handleResize = () => {
@@ -16,6 +17,11 @@ export default class ProgressBar extends Component {
 
     componentDidMount() {
         this.handleResize();
+        setTimeout(() => {
+            this.setState({
+                progress: this.props.progress,
+            });
+        });
         window.addEventListener('resize', this.handleResize);
     }
 
@@ -26,7 +32,7 @@ export default class ProgressBar extends Component {
     render() {
         return (
             <div className="progress-bar">
-                <div className="progress-bar-front" style={{ width: this.props.progress }}>
+                <div className="progress-bar-front" style={{ width: this.state.progress }}>
                     <img
                         style={{ width: this.state.windowWidth }}
                         src={progressFront}

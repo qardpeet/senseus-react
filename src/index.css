@@ -82,6 +82,7 @@ hr {
 .progress-bar-front {
     overflow: hidden;
     position: absolute;
+    transition: width 1.5s ease-in-out;
 }
 
 .progress-bar img {
