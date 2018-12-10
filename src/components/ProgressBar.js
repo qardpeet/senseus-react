@@ -16,13 +16,13 @@ export default class ProgressBar extends Component {
     };
 
     componentDidMount() {
+        window.addEventListener('resize', this.handleResize);
         this.handleResize();
         setTimeout(() => {
             this.setState({
                 progress: this.props.progress,
             });
         });
-        window.addEventListener('resize', this.handleResize);
     }
 
     componentWillUnmount() {

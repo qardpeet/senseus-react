@@ -6,22 +6,22 @@ export default class PetitionAction extends Component {
         return (
             <div className="row petition-action">
                 <div className="col s12 l6">
-                    <h4>შეიტანე წვლილი ქართული ინტერნეტ სივრცის განვითარებაში</h4>
-                    <p>ჩვენ ვითხოვთ Google Adsense-ის შემოტანას საქართველოში</p>
+                    <h4>{this.props.title}</h4>
+                    <p>{this.props.description}</p>
                 </div>
                 <div className="col s12 l6">
                     <div className="white-wrapper petition-form">
                         <button className="action-btn fb">
                             <img src={fb} alt="facebook" />
-                            მოაწერე ხელი ფეისბუქით
+                            {this.props.buttonActionFb}
                         </button>
-                        <p>ან</p>
+                        <p>{this.props.choice}</p>
                         <hr />
                         <form action="">
-                            <input type="text" placeholder="სახელი" />
-                            <input type="text" placeholder="გვარი" />
-                            <input type="email" placeholder="ელ-ფოსტა" />
-                            <button className="action-btn">მოაწერე ხელი</button>
+                            <input type="text" placeholder={this.props.namePlaceholder} />
+                            <input type="text" placeholder={this.props.lastnamePlaceholder} />
+                            <input type="email" placeholder={this.props.emailPlaceholder} />
+                            <button className="action-btn">{this.props.buttonAction}</button>
                         </form>
                     </div>
                 </div>

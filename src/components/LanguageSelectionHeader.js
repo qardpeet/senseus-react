@@ -1,18 +1,24 @@
 import React from 'react';
 
-const LanguageSelectionHeader = () => {
+const LanguageSelectionHeader = ({ handleLanguage }) => {
     return (
         <div className="language-selection">
             <ul>
                 <li>
-                    <a href="google.com">
-                        <h6>ENG</h6>
-                    </a>
+                    <h6
+                        style={{ cursor: 'pointer', fontFamily: 'BPGweb' }}
+                        onClick={() => handleLanguage('en')}
+                    >
+                        ENG
+                    </h6>
                 </li>
                 <li>
-                    <a href="google.com">
-                        <h6>ქარ</h6>
-                    </a>
+                    <h6
+                        style={{ cursor: 'pointer', fontFamily: 'BPGweb' }}
+                        onClick={() => handleLanguage('geo')}
+                    >
+                        ქარ
+                    </h6>
                 </li>
             </ul>
         </div>

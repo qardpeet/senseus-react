@@ -8,18 +8,78 @@
     src: url(./assets/fonts/bpg_web_001_caps.ttf);
 }
 
+@font-face {
+    font-family: roboto;
+    src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: robotoBold;
+    src: url(./assets/fonts/Roboto-Bold.ttf);
+}
+
 html {
     height: 100%;
-    background-image: linear-gradient(#01579b, #039be5);
+    background-image: linear-gradient(#01579b, #0288d1);
     background-repeat: no-repeat;
-    background-color: #039be5;
+    background-size: fill;
+    background-color: #0288d1;
+    overflow-x: hidden;
 }
 
 body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    font-family: BPGarial;
+    overflow-x: hidden;
+}
+
+.geo {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: BPGweb;
+    }
+
+    p {
+        font-family: BPGarial;
+    }
+
+    input[type='text']:not(.browser-default),
+    input[type='email']:not(.browser-default) {
+        font-family: BPGarial;
+    }
+
+    .action-btn {
+        font-family: BPGweb;
+    }
+}
+
+.en {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: robotoBold;
+    }
+
+    p {
+        font-family: roboto;
+    }
+
+    input[type='text']:not(.browser-default),
+    input[type='email']:not(.browser-default) {
+        font-family: roboto;
+    }
+
+    .action-btn {
+        font-family: robotoBold;
+    }
 }
 
 h1,
@@ -28,13 +88,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: BPGweb;
     font-weight: 400;
     color: #fff;
 }
 
 p {
     color: #fff;
+    font-size: 18px;
 }
 
 a {
@@ -45,6 +105,12 @@ hr {
     border: 1px solid #ebebeb;
     padding: 0;
     margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 16px;
+    }
 }
 
 /* Language Selection */
@@ -82,7 +148,7 @@ hr {
 .progress-bar-front {
     overflow: hidden;
     position: absolute;
-    transition: width 1.5s ease-in-out;
+    transition: width 2.5s ease-out;
 }
 
 .progress-bar img {
@@ -100,7 +166,7 @@ hr {
 /* Petition Action */
 
 .petition-action {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .white-wrapper {
@@ -118,7 +184,6 @@ input[type='email']:not(.browser-default) {
     margin-bottom: 25px;
     padding: 0px 15px;
     box-sizing: border-box;
-    font-family: BPGarial;
 }
 
 input[type='text']:not(.browser-default):focus:not([readonly]),
@@ -135,7 +200,6 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
     border: none;
     padding: 1rem;
     border-radius: 5px;
-    font-family: BPGweb;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -167,16 +231,24 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
     text-align: center;
 }
 
+.petition-action h4 {
+    margin-bottom: 40px;
+    line-height: 3.4rem;
+}
+
 @media only screen and (max-width: 600px) {
     .petition-action h4 {
         font-size: 1.4rem;
         text-align: center;
+        margin-bottom: 15px;
+        line-height: 2rem;
     }
     .petition-action p {
         text-align: center;
+        margin-bottom: 20px;
     }
-    .petition-action {
-        margin-bottom: 70px;
+    .white-wrapper {
+        padding: 20px;
     }
 }
 
@@ -185,7 +257,11 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
 /* BulletPoint */
 
 .bulletpoint {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+}
+
+.bulletpoint .bulletpoint-list:not(:last-child) {
+    margin-bottom: 50px;
 }
 
 .bulletpoint-list img {
@@ -199,9 +275,57 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
     align-items: center;
 }
 
+.bulletpoint-list p {
+    line-height: 2.5rem;
+}
+
 @media only screen and (max-width: 600px) {
+    .bulletpoint {
+        margin-bottom: 40px;
+    }
     .bulletpoint-list {
         display: block;
+    }
+    .bulletpoint-list p {
+        line-height: 1.5rem;
+    }
+}
+
+/* ------------------------ */
+
+/* PropositionEssay */
+
+.proposition-essay {
+    padding: 60px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.proposition-essay p {
+    text-align: left;
+    line-height: 2.5rem;
+}
+
+.proposition-essay h5 {
+    color: #000;
+}
+
+.background-path-wrapper {
+    position: absolute;
+    left: -40%;
+    right: -30%;
+    bottom: 0;
+    top: 0px;
+    z-index: -999;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    .proposition-essay {
+        padding: 20px;
+    }
+    .proposition-essay p {
+        line-height: 2rem;
     }
 }
 
