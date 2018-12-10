@@ -7,15 +7,16 @@ export default class ProgressBar extends Component {
         windowWidth: 0,
     };
 
-    handleResize = windowWidth => {
+    handleResize = () => {
+        const documentWidth = document.documentElement.clientWidth;
         this.setState({
-            windowWidth: windowWidth,
+            windowWidth: documentWidth,
         });
     };
 
     componentDidMount() {
-        this.handleResize(window.innerWidth);
-        window.addEventListener('resize', e => this.handleResize(e.target.window.innerWidth));
+        this.handleResize();
+        window.addEventListener('resize', this.handleResize);
     }
 
     componentWillUnmount() {

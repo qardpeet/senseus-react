@@ -52,6 +52,7 @@ hr {
 .language-selection {
     display: block;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .language-selection ul {
@@ -64,6 +65,10 @@ hr {
     color: #fff;
 }
 
+.language-selection h6 {
+    font-size: 1rem;
+}
+
 /* ------------------------ */
 
 /* Progress Bar */
@@ -71,13 +76,22 @@ hr {
 .progress-bar {
     position: relative;
     min-height: 100%;
-    padding: 3rem 0;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .progress-bar-front {
     overflow: hidden;
     position: absolute;
+}
+
+.progress-bar img {
+    width: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .progress-bar {
+        margin-bottom: 20px;
+    }
 }
 
 /* ------------------------ */
@@ -152,6 +166,19 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
     text-align: center;
 }
 
+@media only screen and (max-width: 600px) {
+    .petition-action h4 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .petition-action p {
+        text-align: center;
+    }
+    .petition-action {
+        margin-bottom: 70px;
+    }
+}
+
 /* ------------------------ */
 
 /* BulletPoint */
@@ -161,7 +188,20 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
 }
 
 .bulletpoint-list img {
-    width: 100%;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.bulletpoint-list {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .bulletpoint-list {
+        display: block;
+    }
 }
 
 /* ------------------------ */

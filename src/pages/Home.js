@@ -13,7 +13,7 @@ export default class Home extends Component {
         return (
             <>
                 <LanguageSelectionHeader />
-                <ProgressBar progress="90%" />
+                <ProgressBar progress="19%" />
                 <div className="container">
                     <PetitionAction />
                     <div className="bulletpoint">
