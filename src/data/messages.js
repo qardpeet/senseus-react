@@ -25,6 +25,17 @@ const messages = {
                 'From the ability to share and consume Georgian educational videos on Youtube, to the immediate access to any piece of information through Google Search, Google’s products have been essential to the recent development of Georgia. The Georgian people have shown that they are wiling and excited to not only fully utilize the fruits of technological innovation, but also to aid in its progress. The high cost associated with Georgian developers joining the world of web creators means that these people are not able to fully utilize their potential, and subsequently contribute to global technological and social progress. The people who signed their names to this letter hope that Google will understand their reasoning behind why they think AdSense has immeasurable value to the Georgian people, as well as how accepting their request will have a positive effect on Google.',
             ],
         },
+        errors : {
+            1: 'Please enter your name.', 
+            2: 'Name must be at least 1 character.',
+            3: 'Name must be a maximum of 50 characters.',
+            4: 'Please enter your last name.',
+            5: 'Last name must be at least 1 character.',
+            6: 'Last name must be a maximum of 50 characters.',
+            7: 'Please enter your email.',
+            8: 'Please enter a valid email.',
+            9: 'An user has already signed this petition with the provided email.',
+        }
     },
     geo: {
         petitionAction: {
@@ -52,6 +63,17 @@ const messages = {
                 'Youtube-ზე საგანმანათლებლო ვიდეოების გაზიარება-ნახვიდან დაწყებული, Google Search-ის გამოყენებით ნებისმიერ ინფორმაციასთან წამიერი წვდომით დამთავრებული, გუგლის პროდუქტები ქართველი მომხმარებლისათვის უაღრესად მნიშვნელოვანია. ქართველმა საზოგადოებამ აჩვენა, რომ ის მზად არის არა მარტო ტექნოლოგიური ინოვაციების ბოლომდე გამოსაყენებლად, არამედ მათი შექმნის პროცესში აქტიური წვლილის შესატანადაც. ქართველი დეველოპერებისათვის „ვებ შემქმნელების“ სამყაროში შესვლასთან დაკავშირებული მაღალი ფასი კი ნიშნავს იმას, რომ მათ არ აქვთ საშუალება ბოლომდე გამოიყენონ თავიანთი პოტენციალი და შედეგად ჩაერთონ გლობალურ ტექნოლოგიურ და სოციალურ პროგრესში. ჩვენ, ვინც ხელს ვაწერთ ამ წერილს, გვჯერა, რომ გუგლი გაიზიარებს ჩვენს არგუმენტებს, თუ რატომ მიგვაჩნია, რომ „AdSense“ მნიშვნელოვანია არა მარტო საქართველოსთვის, არამედ გუგლისთვისაც.'
             ],
         },
+        errors : {
+            1: 'გთხოვთ შეიყვანოთ სახელი.', 
+            2: 'სახელი უნდა იყოს მინიმუმ 1 ასო.',
+            3: 'სახელი უნდა იყოს მაქსიმუმ 50 ასო.',
+            4: 'გთხოვთ შეიყვანოთ გვარი.',
+            5: 'გვარი უნდა იყოს მინიმუმ 1 ასო.',
+            6: 'გვარი უნდა იყოს მაქსიმუმ 50 ასო.',
+            7: 'გთხოვთ შეიყვანოთ მეილი.',
+            8: 'მეილის ფორმატი არასწორია.',
+            9: 'ამ მეილით ხელმოწერა უკვე დაფიქსირებულია.',
+        }
     },
 };
 
