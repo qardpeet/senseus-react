@@ -330,3 +330,30 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
 }
 
 /* ------------------------ */
+
+/* Notification */
+
+.notification {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    overflow: hidden;
+    padding: 5px 15px;
+    &.success {
+        background-color: #43a047;
+    }
+    &.fail {
+        background-color: red;
+    }
+    p {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+/* ------------------------ */

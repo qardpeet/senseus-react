@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
 import Home from './pages/Home';
+import Notification from './components/Notification';
 
 export default class App extends Component {
     state = {
         language: 'geo',
+        modal: {
+            isActive: false,
+            status: false,
+            message: '',
+        },
+    };
+
+    toggleModal = (status, message, timeout) => {
+        this.setState({
+            modal: {
+                isActive: true,
+                status: status,
+                message: message,
+            },
+        });
+
+        setTimeout(() => {
+            this.setState({
+                modal: {
+                    ...this.state.modal,
+                    isActive: false,
+                },
+            });
+        }, timeout);
     };
 
     componentDidMount() {
@@ -13,6 +38,8 @@ export default class App extends Component {
         this.setState({
             language: localStorage.senseusLanguage,
         });
+
+        this.toggleModal(true, 'გამარჯობა მსოფლიო!', 5000); // toggleModal(boolean for message status, message string, timeout in ms for the notification)
     }
 
     handleLanguage = lang => {
@@ -25,6 +52,11 @@ export default class App extends Component {
     render() {
         return (
             <div className={this.state.language}>
+                <Notification
+                    isActive={this.state.modal.isActive}
+                    status={this.state.modal.status}
+                    message={this.state.modal.message}
+                />
                 <Home handleLanguage={this.handleLanguage} language={this.state.language} />
             </div>
         );
