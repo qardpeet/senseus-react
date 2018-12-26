@@ -18,6 +18,7 @@ export default class Home extends Component {
                 <ProgressBar progress="60%" />
                 <div className="container">
                     <PetitionAction
+                        toggleModal={this.props.toggleModal}
                         title={messages[this.props.language].petitionAction.title}
                         description={messages[this.props.language].petitionAction.description}
                         buttonAction={messages[this.props.language].petitionAction.buttonAction}
@@ -32,6 +33,7 @@ export default class Home extends Component {
                             messages[this.props.language].petitionAction.emailPlaceholder
                         }
                         choice={messages[this.props.language].petitionAction.choice}
+                        language={this.props.language}
                     />
                     <div className="bulletpoint">
                         <BulletPoint

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './pages/Home';
 import Notification from './components/Notification';
 
+
 export default class App extends Component {
     state = {
         language: 'geo',
@@ -38,8 +39,6 @@ export default class App extends Component {
         this.setState({
             language: localStorage.senseusLanguage,
         });
-
-        this.toggleModal(true, 'გამარჯობა მსოფლიო!', 5000); // toggleModal(boolean for message status, message string, timeout in ms for the notification)
     }
 
     handleLanguage = lang => {
@@ -57,7 +56,7 @@ export default class App extends Component {
                     status={this.state.modal.status}
                     message={this.state.modal.message}
                 />
-                <Home handleLanguage={this.handleLanguage} language={this.state.language} />
+                <Home handleLanguage={this.handleLanguage} toggleModal={this.toggleModal} language={this.state.language} />
             </div>
         );
     }

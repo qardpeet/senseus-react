@@ -35,7 +35,9 @@ const messages = {
             7: 'Please enter your email.',
             8: 'Please enter a valid email.',
             9: 'An user has already signed this petition with the provided email.',
-        }
+        },
+        success: 'You have successfully signed the petition. Please click the link we sent you to verify your email address.',
+        verified: 'You have successfully verified your email.'
     },
     geo: {
         petitionAction: {
@@ -73,7 +75,9 @@ const messages = {
             7: 'გთხოვთ შეიყვანოთ მეილი.',
             8: 'მეილის ფორმატი არასწორია.',
             9: 'ამ მეილით ხელმოწერა უკვე დაფიქსირებულია.',
-        }
+        },
+        success: 'ხელის მოწერამ წარმატებით ჩაიარა! გთხოვთ დააჭიროთ თქვენს მეილზე მოცემულ ლინკს ვერიფიკაციის გასავლელად.',
+        verified: 'მეილის ვერიფიკაციამ წარმატებით ჩაიარა.'
     },
 };
 
