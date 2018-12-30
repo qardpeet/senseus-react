@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fb from '../assets/img/fb.png';
 import messages from '../data/messages';
+import axios from 'axios';
 
 const apiLink = 'https://senseus-api.herokuapp.com';
 
@@ -25,37 +26,29 @@ export default class PetitionAction extends Component {
 
     throwErrors = errors => {
         //the result of framework-specific methods, localization, and laziness
-        this.props.toggleModal(
-            false,
-            messages[this.props.language].errors[errors[Object.keys(errors)[0]][0]],
-            10000
-        );
+        const errorKey = errors[Object.keys(errors)[0]][0];
+        this.props.toggleModal(false, messages[this.props.language].errors[errorKey], 10000);
     };
 
     handleSubmit = () => {
-        var data = new FormData();
-        data.append('firstName', this.state.userInput.firstName);
-        data.append('lastName', this.state.userInput.lastName);
-        data.append('email', this.state.userInput.email);
+        let data = {};
+        data['firstName'] = this.state.userInput.firstName;
+        data['lastName'] = this.state.userInput.lastName;
+        data['email'] = this.state.userInput.email;
 
-        fetch(apiLink + '/api/sign/email', {
-            method: 'POST',
-            body: data,
-        })
-            .then(res => res.json())
-            .then(
-                result => {
-                    console.log(result);
-                    if (result.status === 'error') {
-                        this.throwErrors(result.errors);
-                    } else {
-                        this.props.toggleModal(true, messages[this.props.language].success, 10000);
-                    }
-                },
-                error => {
-                    console.log(error);
+        axios
+            .post(`${apiLink}/api/sign/email`, data)
+            .then(res => {
+                if (res.data.status !== 'success') return;
+                this.props.toggleModal(true, messages[this.props.language].success, 10000);
+            })
+            .catch(e => {
+                if (e.response.status === 422) {
+                    this.throwErrors(e.response.data.errors);
+                } else {
+                    console.error(e.response);
                 }
-            );
+            });
     };
 
     render() {
@@ -67,7 +60,7 @@ export default class PetitionAction extends Component {
                 </div>
                 <div className="col s12 l6">
                     <div className="white-wrapper petition-form">
-                        <a className="action-btn fb" href={apiLink + '/facebook/redirect'}>
+                        <a className="action-btn fb" href={`${apiLink}/facebook/redirect`}>
                             <img src={fb} alt="facebook" />
                             {this.props.buttonActionFb}
                         </a>
