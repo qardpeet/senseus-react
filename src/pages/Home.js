@@ -6,12 +6,13 @@ import BulletPoint from '../components/BulletPoint';
 import PropositionEssay from '../components/PropositionEssay';
 import SignatureList from '../components/SignatureList';
 
-import havingFunIMG from '../assets/img/having-fun.png';
 import codingIMG from '../assets/img/coding.png';
-import makingArtIMG from '../assets/img/making-art.png';
+import agreementIMG from '../assets/img/agreement.png';
+import developmentIMG from '../assets/img/development.png';
 import messages from '../data/messages';
 
 import axios from 'axios';
+import { FacebookShareButton, FacebookIcon } from 'react-share';
 
 const apiLink = 'https://senseus-api.herokuapp.com';
 
@@ -48,6 +49,9 @@ export default class Home extends Component {
     render() {
         return (
             <>
+                <FacebookShareButton url="https://senseus.ge" className="facebook-share">
+                    <FacebookIcon size={32} />
+                </FacebookShareButton>
                 <LanguageSelectionHeader handleLanguage={this.props.handleLanguage} />
                 <ProgressBar
                     progress={`${this.state.progress}%`}
@@ -77,7 +81,7 @@ export default class Home extends Component {
                     />
                     <div className="bulletpoint">
                         <BulletPoint
-                            imgSrc={havingFunIMG}
+                            imgSrc={developmentIMG}
                             description={messages[this.props.language].bulletPoint[0]}
                         />
                         <BulletPoint
@@ -85,7 +89,7 @@ export default class Home extends Component {
                             description={messages[this.props.language].bulletPoint[1]}
                         />
                         <BulletPoint
-                            imgSrc={makingArtIMG}
+                            imgSrc={agreementIMG}
                             description={messages[this.props.language].bulletPoint[2]}
                         />
                     </div>
