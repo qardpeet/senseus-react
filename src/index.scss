@@ -161,6 +161,11 @@ hr {
     }
 }
 
+.current-progress {
+    z-index: 9999999;
+    text-align: center;
+}
+
 /* ------------------------ */
 
 /* Petition Action */
@@ -356,6 +361,32 @@ input[type='email']:not(.browser-default):focus:not([readonly]) {
     p {
         text-align: center;
         font-size: 16px;
+    }
+}
+
+/* ------------------------ */
+
+/* SignatureList */
+
+.signature-list {
+    margin-bottom: 50px;
+    h5 {
+        color: #000;
+    }
+    img {
+        height: 80px;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ebebeb;
+        background-color: #0288d1;
+        border-radius: 50%;
+    }
+    .load-more {
+        font-size: 14px;
+        color: blue;
+        text-align: right;
+        margin: 20px 0 0 0;
+        cursor: pointer;
     }
 }
 

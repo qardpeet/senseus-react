@@ -38,6 +38,14 @@ const messages = {
         },
         success: 'Please check your email for a verification link.',
         verified: 'You have successfully signed the petition. Thank you!',
+        signature: 'Signatures',
+        goal: 'Goal',
+        signatureList: {
+            title: 'SIGNEES',
+            avatar: 'Avatar',
+            name: 'Name',
+            loadMore: 'Load more...',
+        },
     },
     geo: {
         petitionAction: {
@@ -78,6 +86,14 @@ const messages = {
         },
         success: 'გთხოვთ შეამოწმოთ მეილი და გახსნათ ვერიფიკაციის ლინკი.',
         verified: 'თქვენ წარმატებით მოაწერეთ პეტიციაზე ხელი. დიდი მადლობა!',
+        signature: 'ხელმოწერა',
+        goal: 'მიზანი',
+        signatureList: {
+            title: 'პეტიციის მხარდამჭერები',
+            avatar: 'ავატარი',
+            name: 'სახელი',
+            loadMore: 'მეტის ჩატვირთვა...',
+        },
     },
 };
 

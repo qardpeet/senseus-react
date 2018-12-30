@@ -5,7 +5,6 @@ import progressFront from '../assets/img/progress-front.png';
 export default class ProgressBar extends Component {
     state = {
         windowWidth: 0,
-        progress: '0%',
     };
 
     handleResize = () => {
@@ -18,11 +17,6 @@ export default class ProgressBar extends Component {
     componentDidMount() {
         window.addEventListener('resize', this.handleResize);
         this.handleResize();
-        setTimeout(() => {
-            this.setState({
-                progress: this.props.progress,
-            });
-        });
     }
 
     componentWillUnmount() {
@@ -32,7 +26,7 @@ export default class ProgressBar extends Component {
     render() {
         return (
             <div className="progress-bar">
-                <div className="progress-bar-front" style={{ width: this.state.progress }}>
+                <div className="progress-bar-front" style={{ width: this.props.progress }}>
                     <img
                         style={{ width: this.state.windowWidth }}
                         src={progressFront}
@@ -46,6 +40,9 @@ export default class ProgressBar extends Component {
                         alt="progress-bar"
                     />
                 </div>
+                <h5 className="current-progress">{`${this.props.signatureCount} ${
+                    this.props.signature
+                } - ${this.props.goal}: ${this.props.goalCount} `}</h5>
             </div>
         );
     }
