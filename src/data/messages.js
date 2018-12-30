@@ -2,18 +2,18 @@ const messages = {
     en: {
         petitionAction: {
             title: 'Contribute to the development of Georgian Internet',
-            description: 'We are requesting Google AdSense support in Georgia',
+            description: 'Currently, Google\'s policy does not allow websites in the Georgian language to generate advertising revenue using AdSense. We are petitioning to change this fact and allow the Georgian internet to reach its full potential.',
             buttonAction: 'Sign this petition',
             buttonActionFb: 'Sign with Facebook',
-            namePlaceholder: 'name',
-            lastnamePlaceholder: 'lastname',
-            emailPlaceholder: 'email',
+            namePlaceholder: 'First Name',
+            lastnamePlaceholder: 'Last Name',
+            emailPlaceholder: 'Email Address',
             choice: 'or',
         },
         bulletPoint: [
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore hic cum vel deserunt reiciendis optio odio architecto officiis harum debitis veniam repellat in accusantium, consectetur ducimus cupiditate. Cumque, et earum?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore hic cum vel deserunt reiciendis optio odio architecto officiis harum debitis veniam repellat in accusantium, consectetur ducimus cupiditate. Cumque, et earum?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore hic cum vel deserunt reiciendis optio odio architecto officiis harum debitis veniam repellat in accusantium, consectetur ducimus cupiditate. Cumque, et earum?',
+            'AdSense is a Google service that lets web developers generate advertising revenue. Due to Google\'s policy, websites that are primarily in the Georgian language are not allowed to use this service.',
+            'This leads to a lack of Georgian web platforms whose main goal isn\'t commercialization. Furthermore, young Georgian developers are not able to expand their skills through creating and deploying websites in the real world.',
+            'The people who signed their names to this letter hope that Google will understand their reasoning behind why they think AdSense has immeasurable value to the Georgian people, as well as how accepting their request will have a positive effect on Google.',
         ],
         propositionEssay: {
             title: 'PROPOSITION',
@@ -50,7 +50,7 @@ const messages = {
     geo: {
         petitionAction: {
             title: 'შეიტანე წვლილი ქართული ინტერნეტ სივრცის განვითარებაში',
-            description: 'ჩვენ ვითხოვთ Google Adsense-ის შემოტანას საქართველოში',
+            description: 'გუგლის წესების მიხედვით, ქართულ ენოვან საიტებს არ შეუძლიათ "AdSense" პლატფორმის საშუალებით საიტზე რეკლამების დადება. ამ პეტიციის მიზანია ამ ფაქტის შეცვლა და შედეგად ქართული ინტერნეტის წარმატების უზრუნველყოფა.',
             buttonAction: 'მოაწერე ხელი',
             buttonActionFb: 'მოაწერე ხელი ფეისბუქით',
             namePlaceholder: 'სახელი',
@@ -59,9 +59,9 @@ const messages = {
             choice: 'ან',
         },
         bulletPoint: [
-            'შუშისა შესულიყო დაეძინათ იმეორებს მოგყვათ გაუჭრიათო სათითაოდ სიმარტოვე აზიისკენ ჯგუფზე. აზიისკენ უძლებდნენ მიუსაჯეს დაბზრიალდა ჰენდრიქსზეო გაცლა. კაცუნები გაცლა მოგყვათ დასაწიოკებლად უძლებდნენ აზიისკენ უყურონ,',
-            'შუშისა შესულიყო დაეძინათ იმეორებს მოგყვათ გაუჭრიათო სათითაოდ სიმარტოვე აზიისკენ ჯგუფზე. აზიისკენ უძლებდნენ მიუსაჯეს დაბზრიალდა ჰენდრიქსზეო გაცლა. კაცუნები გაცლა მოგყვათ დასაწიოკებლად უძლებდნენ აზიისკენ უყურონ,',
-            'შუშისა შესულიყო დაეძინათ იმეორებს მოგყვათ გაუჭრიათო სათითაოდ სიმარტოვე აზიისკენ ჯგუფზე. აზიისკენ უძლებდნენ მიუსაჯეს დაბზრიალდა ჰენდრიქსზეო გაცლა. კაცუნები გაცლა მოგყვათ დასაწიოკებლად უძლებდნენ აზიისკენ უყურონ,',
+            'AdSense არის გუგლი-ს პლატფორმა, რომლის საშუალებითაც ვებსაიტის შემქმნელს შეუძლია დაფაროს ფინანსური ხარჯები სარეკლამო ადგილის გაქირავებით. AdSense-ს წესების მიხედვით ქართულ ენოვან საიტებზე აკრძალულია ამ სერვისის გამოყენება.',
+            'ეს იწვევს ისეთი ქართულ ენოვანი საიტების ნაკლებობას, რომლის მთავარი აზრი არ არის მომხმარებელზე კაპიტალიზაცია. ასევე, ახალგაზრდა პროგრამისტებს არ აქვთ საიტების შექმნის პრაქტიკით შესწავლის საშუალება.',
+            'ჩვენ, ვინც ხელს ვაწერთ ამ წერილს, გვჯერა, რომ გუგლი გაიზიარებს ჩვენს არგუმენტებს, თუ რატომ მიგვაჩნია, რომ „AdSense“ მნიშვნელოვანია არა მარტო საქართველოსთვის, არამედ გუგლისთვისაც',
         ],
         propositionEssay: {
             title: 'პროპოზიცია',
