@@ -14,6 +14,16 @@ import messages from '../data/messages';
 import axios from 'axios';
 import { FacebookShareButton, FacebookIcon } from 'react-share';
 
+// A/B Testing initialization
+var Experiment = require('react-ab-test/lib/Experiment');
+var Variant = require('react-ab-test/lib/Variant');
+var emitter = require('react-ab-test/lib/emitter');
+var mixpanelHelper = require('react-ab-test/lib/helpers/mixpanel');
+
+emitter.defineVariants("bulletPoints", ["visible", "invisible"], [50, 50]);
+
+mixpanelHelper.enable();
+
 const apiLink = 'https://senseus-api.herokuapp.com';
 
 export default class Home extends Component {
@@ -45,6 +55,11 @@ export default class Home extends Component {
             progress: progress,
         });
     };
+
+    logClick() {
+        emitter.emitWin("bulletPoints");
+        emitter.emitWin("signMethods");
+    }
 
     render() {
         return (
@@ -78,21 +93,29 @@ export default class Home extends Component {
                         }
                         choice={messages[this.props.language].petitionAction.choice}
                         language={this.props.language}
+                        logClick={this.logClick}
                     />
-                    <div className="bulletpoint">
-                        <BulletPoint
-                            imgSrc={developmentIMG}
-                            description={messages[this.props.language].bulletPoint[0]}
-                        />
-                        <BulletPoint
-                            imgSrc={codingIMG}
-                            description={messages[this.props.language].bulletPoint[1]}
-                        />
-                        <BulletPoint
-                            imgSrc={agreementIMG}
-                            description={messages[this.props.language].bulletPoint[2]}
-                        />
-                    </div>
+                    <Experiment name="bulletPoints">
+                        <Variant name="visible">
+                            <div className="bulletpoint">
+                                <BulletPoint
+                                    imgSrc={developmentIMG}
+                                    description={messages[this.props.language].bulletPoint[0]}
+                                />
+                                <BulletPoint
+                                    imgSrc={codingIMG}
+                                    description={messages[this.props.language].bulletPoint[1]}
+                                />
+                                <BulletPoint
+                                    imgSrc={agreementIMG}
+                                    description={messages[this.props.language].bulletPoint[2]}
+                                />
+                            </div>
+                        </Variant>
+                        <Variant name="invisible">
+                            <div />
+                        </Variant>
+                    </Experiment>
                     <PropositionEssay
                         title={messages[this.props.language].propositionEssay.title}
                         content={messages[this.props.language].propositionEssay.content}

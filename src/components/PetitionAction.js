@@ -3,6 +3,16 @@ import fb from '../assets/img/fb.png';
 import messages from '../data/messages';
 import axios from 'axios';
 
+// A/B Testing initialization
+var Experiment = require('react-ab-test/lib/Experiment');
+var Variant = require('react-ab-test/lib/Variant');
+var emitter = require('react-ab-test/lib/emitter');
+var mixpanelHelper = require('react-ab-test/lib/helpers/mixpanel');
+
+emitter.defineVariants("signMethods", ["facebook", "both"], [50, 50]);
+
+mixpanelHelper.enable();
+
 const apiLink = 'https://senseus-api.herokuapp.com';
 
 export default class PetitionAction extends Component {
@@ -40,6 +50,7 @@ export default class PetitionAction extends Component {
             .post(`${apiLink}/api/sign/email`, data)
             .then(res => {
                 if (res.data.status !== 'success') return;
+                this.props.logClick();
                 this.props.toggleModal(true, messages[this.props.language].success, 10000);
             })
             .catch(e => {
@@ -60,36 +71,46 @@ export default class PetitionAction extends Component {
                 </div>
                 <div className="col s12 l6">
                     <div className="white-wrapper petition-form">
-                        <a className="action-btn fb" href={`${apiLink}/facebook/redirect`}>
-                            <img src={fb} alt="facebook" />
-                            {this.props.buttonActionFb}
-                        </a>
-                        <p>{this.props.choice}</p>
-                        <hr />
-                        <input
-                            onChange={this.handleChange}
-                            type="text"
-                            name="firstName"
-                            value={this.state.userInput.firstName}
-                            placeholder={this.props.namePlaceholder}
-                        />
-                        <input
-                            onChange={this.handleChange}
-                            type="text"
-                            name="lastName"
-                            value={this.state.userInput.lastName}
-                            placeholder={this.props.lastnamePlaceholder}
-                        />
-                        <input
-                            onChange={this.handleChange}
-                            type="email"
-                            name="email"
-                            value={this.state.userInput.email}
-                            placeholder={this.props.emailPlaceholder}
-                        />
-                        <button className="action-btn" onClick={this.handleSubmit} href="#">
-                            {this.props.buttonAction}
-                        </button>
+                        <Experiment name="signMethods">
+                            <Variant name="both">
+                                <a className="action-btn fb" onClick={this.props.logClick} href={`${apiLink}/facebook/redirect`}>
+                                    <img src={fb} alt="facebook" />
+                                    {this.props.buttonActionFb}
+                                </a>
+                                <p>{this.props.choice}</p>
+                                <hr />
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="firstName"
+                                    value={this.state.userInput.firstName}
+                                    placeholder={this.props.namePlaceholder}
+                                />
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="lastName"
+                                    value={this.state.userInput.lastName}
+                                    placeholder={this.props.lastnamePlaceholder}
+                                />
+                                <input
+                                    onChange={this.handleChange}
+                                    type="email"
+                                    name="email"
+                                    value={this.state.userInput.email}
+                                    placeholder={this.props.emailPlaceholder}
+                                />
+                                <button className="action-btn" onClick={this.handleSubmit} href="#">
+                                    {this.props.buttonAction}
+                                </button>
+                            </Variant>
+                            <Variant name="facebook">
+                                <a className="action-btn fb" onClick={this.props.logClick} href={`${apiLink}/facebook/redirect`}>
+                                    <img src={fb} alt="facebook" />
+                                    {this.props.buttonActionFb}
+                                </a>
+                            </Variant>
+                        </Experiment>
                     </div>
                 </div>
             </div>
