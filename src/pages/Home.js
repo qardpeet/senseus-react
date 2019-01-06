@@ -12,6 +12,7 @@ import developmentIMG from '../assets/img/development.png';
 import messages from '../data/messages';
 
 import axios from 'axios';
+import ReactGA from 'react-ga';
 import { FacebookShareButton, FacebookIcon } from 'react-share';
 
 const apiLink = 'https://senseus-api.herokuapp.com';
@@ -25,6 +26,10 @@ export default class Home extends Component {
     };
 
     componentDidMount() {
+        //Google Analytics initialization
+        ReactGA.initialize('UA-121429645-2');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+
         axios
             .get(`${apiLink}/api/status`)
             .then(res => {
@@ -37,6 +42,13 @@ export default class Home extends Component {
             .catch(e => {
                 console.error(e);
             });
+    }
+
+    trackAnalytics(category, action) {
+        ReactGA.event({
+            category: category,
+            action: action,
+        });
     }
 
     calculateProgress = signatureCount => {
@@ -62,6 +74,7 @@ export default class Home extends Component {
                 />
                 <div className="container">
                     <PetitionAction
+                        trackAnalytics={this.trackAnalytics}
                         toggleModal={this.props.toggleModal}
                         title={messages[this.props.language].petitionAction.title}
                         description={messages[this.props.language].petitionAction.description}
