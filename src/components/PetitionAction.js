@@ -40,7 +40,6 @@ export default class PetitionAction extends Component {
             .post(`${apiLink}/api/sign/email`, data)
             .then(res => {
                 if (res.data.status !== 'success') return;
-                this.props.trackAnalytics('signature', 'Petition signed with email');
                 this.props.toggleModal(true, messages[this.props.language].success, 10000);
             })
             .catch(e => {
@@ -61,7 +60,7 @@ export default class PetitionAction extends Component {
                 </div>
                 <div className="col s12 l6">
                     <div className="white-wrapper petition-form">
-                        <a className="action-btn fb" onClick={() => {this.props.trackAnalytics('signature', 'Petition signed with facebook')}} href={`${apiLink}/facebook/redirect`}>
+                        <a className="action-btn fb" href={`${apiLink}/facebook/redirect`}>
                             <img src={fb} alt="facebook" />
                             {this.props.buttonActionFb}
                         </a>
