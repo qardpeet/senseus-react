@@ -9,8 +9,7 @@ export default class SignatureList extends Component {
 
     handleLoad = () => {
         this.setState({
-            count: this.props.signatures.length,
-            loadMore: false,
+            count: this.state.count + 10,
         });
     };
 
