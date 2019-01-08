@@ -66,9 +66,11 @@ export default class App extends Component {
     }
 
     handleLanguage = lang => {
-        localStorage.setItem('senseusLanguage', lang);
+        if(localStorage){
+            localStorage.setItem('senseusLanguage', lang);
+        }
         this.setState({
-            language: localStorage.senseusLanguage,
+            language: lang,
         });
     };
 
