@@ -38,7 +38,12 @@ export default class App extends Component {
 
     componentDidMount() {
         const params = new URLSearchParams(window.location.search);
-        let language = localStorage.senseusLanguage;
+        let language = '';
+        if(localStorage){
+            language = localStorage.senseusLanguage;
+        } else { 
+            language = 'geo';
+        }
 
         if (language !== 'geo' && language !== 'en') {
             localStorage.setItem('senseusLanguage', 'geo');
