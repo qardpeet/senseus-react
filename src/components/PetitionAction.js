@@ -60,6 +60,7 @@ export default class PetitionAction extends Component {
                 </div>
                 <div className="col s12 l6">
                     <div className="white-wrapper petition-form">
+                        <p className="disclosure">{this.props.disclosure}</p>
                         <a className="action-btn fb" href={`${apiLink}/facebook/redirect`}>
                             <img src={fb} alt="facebook" />
                             {this.props.buttonActionFb}

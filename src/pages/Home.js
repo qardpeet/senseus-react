@@ -77,6 +77,7 @@ export default class Home extends Component {
                             messages[this.props.language].petitionAction.emailPlaceholder
                         }
                         choice={messages[this.props.language].petitionAction.choice}
+                        disclosure={messages[this.props.language].petitionAction.disclosure}
                         language={this.props.language}
                     />
                     <div className="bulletpoint">

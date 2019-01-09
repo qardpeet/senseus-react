@@ -2,17 +2,20 @@ const messages = {
     en: {
         petitionAction: {
             title: 'Contribute to the development of Georgian Internet',
-            description: 'Currently, Google\'s policy does not allow websites in the Georgian language to generate advertising revenue using AdSense. We are petitioning to change this fact and allow the Georgian internet to reach its full potential.',
+            description:
+                "Currently, Google's policy does not allow websites in the Georgian language to generate advertising revenue using AdSense. We are petitioning to change this fact and allow the Georgian internet to reach its full potential.",
             buttonAction: 'Sign this petition',
             buttonActionFb: 'Sign with Facebook',
             namePlaceholder: 'First Name',
             lastnamePlaceholder: 'Last Name',
             emailPlaceholder: 'Email Address',
             choice: 'or',
+            disclosure:
+                'We never share your E-Mail & your name will be publically available to all users.',
         },
         bulletPoint: [
-            'AdSense is a Google service that lets web developers generate advertising revenue. Due to Google\'s policy, websites that are primarily in the Georgian language are not allowed to use this service.',
-            'This leads to a lack of Georgian web platforms whose main goal isn\'t commercialization. Furthermore, young Georgian developers are not able to expand their skills through creating and deploying websites in the real world.',
+            "AdSense is a Google service that lets web developers generate advertising revenue. Due to Google's policy, websites that are primarily in the Georgian language are not allowed to use this service.",
+            "This leads to a lack of Georgian web platforms whose main goal isn't commercialization. Furthermore, young Georgian developers are not able to expand their skills through creating and deploying websites in the real world.",
             'The people who signed their names to this letter hope that Google will understand their reasoning behind why they think AdSense has immeasurable value to the Georgian people, as well as how accepting their request will have a positive effect on Google.',
         ],
         propositionEssay: {
@@ -50,13 +53,16 @@ const messages = {
     geo: {
         petitionAction: {
             title: 'შეიტანე წვლილი ქართული ინტერნეტ სივრცის განვითარებაში',
-            description: 'გუგლის წესების მიხედვით, ქართულენოვან საიტებს არ შეუძლიათ "AdSense" პლატფორმის საშუალებით საიტზე რეკლამების დადება. ამ პეტიციის მიზანია ამ ფაქტის შეცვლა და შედეგად ქართული ინტერნეტის წარმატების უზრუნველყოფა.',
+            description:
+                'გუგლის წესების მიხედვით, ქართულენოვან საიტებს არ შეუძლიათ "AdSense" პლატფორმის საშუალებით საიტზე რეკლამების დადება. ამ პეტიციის მიზანია ამ ფაქტის შეცვლა და შედეგად ქართული ინტერნეტის წარმატების უზრუნველყოფა.',
             buttonAction: 'მოაწერე ხელი',
             buttonActionFb: 'მოაწერე ხელი ფეისბუქით',
             namePlaceholder: 'სახელი',
             lastnamePlaceholder: 'გვარი',
             emailPlaceholder: 'ელ-ფოსტა',
             choice: 'ან',
+            disclosure:
+                'ჩვენ არ გავაზიარებთ თქვენს ელ-ფოსტას და თქვენი სახელი იქნება საჯაროდ გამოქვეყნებული საიტზე.',
         },
         bulletPoint: [
             'AdSense არის გუგლი-ს პლატფორმა, რომლის საშუალებითაც ვებსაიტის შემქმნელს შეუძლია დაფაროს ფინანსური ხარჯები სარეკლამო ადგილის გაქირავებით. AdSense-ს წესების მიხედვით ქართულენოვან საიტებზე აკრძალულია ამ სერვისის გამოყენება.',
